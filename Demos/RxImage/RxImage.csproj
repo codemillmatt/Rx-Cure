@@ -94,6 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\CowImage.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\CowImage.imageset\Cow%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CowImage.imageset\Cow%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CowImage.imageset\Cow%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Background.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Background.imageset\Background.pdf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -111,6 +117,8 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="CowImageView.cs" />
+    <Compile Include="ImageMotionData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
