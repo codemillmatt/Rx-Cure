@@ -196,3 +196,5 @@ FakesAssemblies/
 *.opt
 
 Presentation/.imdone/config.json
+
+Demos/RxBLE/Droid/OldDroidTooth.cs
