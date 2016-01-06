@@ -25,7 +25,7 @@ build-lists: true
 * Taps & Touches
 * Async I/O - DBs, REST services
 * Web Sockets
-* GPS
+* Device Services - GPS, BLE, etc
 
 ---
 
@@ -465,33 +465,11 @@ searchSteam.Subscribe (
     * Constrain image to top half of screen
     * Make event args easier to deal with
 
-
-[clean image move demo](#CodeDemos:0)
-[image move demo](#GitHub:0)
-
 ---
 
 # [fit] Demo Time!
 
 ![inline](../Images/ImageMoveMarbles.png)
-
----
-
-# Aggregate Diagram
-
-![inline](../Images/AggregateMarbles.png)
-
-    * Send each emitted value into a function, along with the accumulated value
-    * aka: reduce, aggregate
-
----
-
-# Aggregate Diagram
-
-![inline](../Images/MaxMarbles.png)
-
-    * On completion, emits the single largest item
-    * Also Min, Avg, Sum, Count...
 
 ---
 
@@ -507,12 +485,6 @@ searchSteam.Subscribe (
     * Many ads come in
     * Separate by device name
     * Only record distinct readings
-    * (find max humidity)
-
-[clean ble group by demo](#CodeDemos:10)
-[clean ble max demo](#CodeDemos:15)
-[ble group by demo](#GitHub:10)
-[ble max demo](#GitHub:15)
 
 ---
 
