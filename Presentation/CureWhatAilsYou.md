@@ -19,6 +19,12 @@ build-lists: true
 
 ---
 
+# Slides & Demos
+<br>
+* https://github.com/codemillmatt/Rx-Cure
+
+---
+
 ## We live in a push based world
 
 * Tweets
@@ -168,7 +174,7 @@ eatCheese
 ## Rx Turns
 # [fit] Events
 ### into
-# [fit] IEnumerable
+# [fit] Enumerable
 
 ---
 
@@ -225,16 +231,16 @@ Implementations for many languages
 
 ---
 
-# [fit] Enter the IObservable
+# [fit] Enter the Observable
 
 ---
 
-# [fit] Enter the IObservable
+# [fit] Enter the Observable
 # [fit] ...but What Exactly Is It??
 
 ---
 
-# An IObservable Is A Stream of Data
+# An Observable Is A Stream of Data
 * Async Cousin of IEnumerable<T>
 * Instead of pulling data - push data
 * Asynchronous, non-blocking
@@ -243,7 +249,7 @@ Implementations for many languages
 
 ---
 
-# An IObservable Does *Things* Through Time
+# An Observable Does *Things* Through Time
 
 1. Emit a value, and continue
 2. Complete
@@ -256,21 +262,21 @@ Implementations for many languages
 
 ---
 
-## Anything Can Be An IObservable
-* IEnumerable
-* Tasks
+## Anything Can Be An Observable
+* Enumerable
+* Tasks (async/callbacks)
 * Events
 
 ---
 
-## IObservables Are Better Than Events
+## Observables Are Better Than Events
 * Stream through time
 * Notify when complete, exception
-* Subscribe to handle
 * LINQ manipulations!
 * 1st class citizen
   * Chain operators
   * Pass as variables
+* Subscribe to handle
 
 ---
 
@@ -288,8 +294,8 @@ Implementations for many languages
   * even with `async` and `await` or callbacks
 
 ^ Mention how we have to hope we got the state correct, etc.
-^ Anything with timers makes the whole thing difficult
-^ Look at an example of listening to keystrokes, ignoring duplicates, calling to web service
+Anything with timers makes the whole thing difficult
+Look at an example of listening to keystrokes, ignoring duplicates, calling to web service
 
 ---
 
@@ -366,6 +372,9 @@ searchSteam.Subscribe (
 			Console.WriteLine($"Cheese name: {cheeseName}"))			
 );
 ```
+---
+
+# [fit] Demo Time!
 
 ---
 
@@ -406,9 +415,9 @@ searchSteam.Subscribe (
 
 ---
 
-# Operating on an IObservable
-* Operators take IObservable
-* Operators return IObservable (sometimes)
+# Operating on an Observable
+* Operators take Observable
+* Operators return Observable (sometimes)
 * Chain 'em together!
 * Operate in turn - one after the other
 
@@ -566,6 +575,8 @@ searchSteam.Subscribe (
 
 # Matt Soucoup
 
+* https://github.com/codemillmatt/Rx-Cure
+<br>
 * Code Mill Technologies
 * Xamarin MVP
 * *_Blog:_* **codemilltech.com**
