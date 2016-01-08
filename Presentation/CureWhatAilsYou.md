@@ -14,14 +14,9 @@ build-lists: true
 * *_Blog:_* **codemilltech.com**
 * *_Email:_* **msoucoup@codemilltech.com**
 * *_Twitter:_* **@codemillmatt**
+* https://github.com/codemillmatt/Rx-Cure
 
 ^ Talk a bit about how I got into Rx: *Develop Xamarin apps and need to handle lots of user input as well as server communication and IOT communication and that happens async - needed a better way to be alerted and a better way to handle as to when those happened
-
----
-
-# Slides & Demos
-<br>
-* https://github.com/codemillmatt/Rx-Cure
 
 ---
 
@@ -57,11 +52,11 @@ build-lists: true
 * Memory leaks
 
 ^ There are many different ways to implement events - anonymous inline delegates. invoke a method, etc.
-^ Because of this - the event can be difficult to follow by a new person looking at the code
-^ When a decision within the event needs to be made - have stateful code
-^ Events can lead to memory leaks. Need to add an event handler to an event to do someththing.
-^ If we don't unsubscribe or release that event handler it's possible that whatever is throwing the event
-^ Will get stuck in memory
+Because of this - the event can be difficult to follow by a new person looking at the code
+When a decision within the event needs to be made - have stateful code
+Events can lead to memory leaks. Need to add an event handler to an event to do something.
+If we don't unsubscribe or release that event handler it's possible that whatever is throwing the event
+Will get stuck in memory
 
 ---
 
@@ -107,11 +102,11 @@ eatCheese
 # Agenda
 
 * What is Reactive Programming & Rx
-* IObservables & Data Streams
+* Observables & Data Streams
 * Thinking Reactive
 
 ^ Just an intro to Rx won't get in-depth, just show why it's cool
-^ Examples will be .Net bases
+Examples will be .Net based
 
 ---
 
@@ -166,14 +161,14 @@ eatCheese
   * Time-based (buffer, window)
 
 ^ Mention - what other thing do we know that can do this?
-^ Transform things as a list?
-^ IEEnumerables!
+Transform things as a list?
+Enumerables!
 
 ---
 
 ## Rx Turns
 # [fit] Events
-### into
+### into an
 # [fit] Enumerable
 
 ---
@@ -227,7 +222,7 @@ Implementations for many languages
     * Swift ...
 
 ^ Get to Declaratively layout code because we aren't focused on handling discrete events as they come in
-^ Then lead into the next slide by saying ... how to we handle or model these Rx things around?
+Then lead into the next slide by saying ... how to we handle or model these Rx things around?
 
 ---
 
@@ -241,11 +236,11 @@ Implementations for many languages
 ---
 
 # An Observable Is A Stream of Data
-* Async Cousin of IEnumerable<T>
+* Async Cousin of Enumerable
 * Instead of pulling data - push data
 * Asynchronous, non-blocking
 * Subscribe to perform some action
-  * Similar to IEnumerable<T>.ForEach
+  * Similar to Enumerable.ForEach
 
 ---
 
@@ -258,7 +253,7 @@ Implementations for many languages
 ![inline](../Images/3States.png)
 
 ^ As each one comes up - talk about what it means in the diagram below
-^ Mention how the stopping isn't bad - as in the previous example
+Mention how the stopping isn't bad - as in the previous example
 
 ---
 
@@ -375,6 +370,8 @@ searchSteam.Subscribe (
 ---
 
 # [fit] Demo Time!
+<br>
+## Keyup -> Search
 
 ---
 
@@ -568,7 +565,7 @@ searchSteam.Subscribe (
 * Rx deals with events
 * Turns them into data streams
 * Allows familiar manipulation of streams
-* Anything IEnumerable<T> can do IObservable<T> can do!
+* Anything Enumerable can do Observable can do!
 * Think with marble diagrams
 
 ---
