@@ -8,7 +8,7 @@ build-lists: true
 ---
 
 # Matt Soucoup
-
+<br>
 * Code Mill Technologies
 * Xamarin MVP
 * *_Blog:_* **codemilltech.com**
@@ -135,7 +135,7 @@ Examples will be .Net based
 <br>
 **A better question is...**
 ## What are events?
-* A collection of things that happen over time
+* A collection of *things* that happen over time
 * A stream of data ...
     * Much like a list
 
@@ -295,6 +295,29 @@ Look at an example of listening to keystrokes, ignoring duplicates, calling to w
 ---
 
 ## Rx vs Imperative
+
+### The Rx Way
+
+* Define what will happen asynchronously
+  * Observable
+* Define any manipulations
+  * Operators
+* Subscribe to its results
+  * Observer
+
+---
+
+# [fit] Demo Time!
+<br>
+## Keyup -> Search
+    * Invoke dictionary lookup service
+    * Query service every .5 sec max
+    * Search box cannot be empty
+    * Text changed since last query
+
+---
+
+## Rx vs Imperative
 ### The Imperative Way
 
 ```csharp
@@ -334,19 +357,6 @@ searchField.EditingChanged += async (sender, e) => {
 ```
 
 ---
-
-## Rx vs Imperative
-
-### The Rx Way
-
-* Define what will happen asynchronously
-  * Observable
-* Define any manipulations
-  * Operators
-* Subscribe to its results
-  * Observer
-
----
 ## Rx vs Imperative
 ### The Rx Way
 
@@ -367,11 +377,6 @@ searchSteam.Subscribe (
 			Console.WriteLine($"Cheese name: {cheeseName}"))			
 );
 ```
----
-
-# [fit] Demo Time!
-<br>
-## Keyup -> Search
 
 ---
 
@@ -467,9 +472,9 @@ searchSteam.Subscribe (
 # [fit] Demo Time!
 <br>
 ## Move Image Around Screen
+    * Make event args easier to deal with
     * Constrain image to left half of screen
     * Constrain image to top half of screen
-    * Make event args easier to deal with
 
 ---
 
@@ -553,26 +558,34 @@ searchSteam.Subscribe (
 ---
 
 # When to use Rx
-* Anything in UI
+* Start with UI
 * Events
 * Network requests
-* Callbacks
-* Push Async!
+* Async/Await - Callbacks
+* Don't need to use all @ once!
 
 ---
 
 # Summary
-* Rx deals with events
+* Rx deals with async events
 * Turns them into data streams
 * Allows familiar manipulation of streams
 * Anything Enumerable can do Observable can do!
-* Think with marble diagrams
+* Think in Rx with marble diagrams
+
+---
+
+# More Info?
+
+* https://github.com/codemillmatt/Rx-Cure
+<br><br>
+* http://reactivex.io/
+* http://www.introtorx.com/
 
 ---
 
 # Matt Soucoup
 
-* https://github.com/codemillmatt/Rx-Cure
 <br>
 * Code Mill Technologies
 * Xamarin MVP
