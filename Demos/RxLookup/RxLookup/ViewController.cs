@@ -30,56 +30,58 @@ namespace RxLookup
 			base.ViewDidLoad ();
 			// Perform any additional setup after loading the view, typically from a nib.
 
-//			var keyStrokeTimer = new Timer (500);
-//			var timeElapsedSinceChanged = true;
-//
-//			keyStrokeTimer.Start ();
-//
-//			keyStrokeTimer.Elapsed += (sender, e) => {
-//				timeElapsedSinceChanged = true;
-//			};
-//
-//			var searchText = "";
-//			searchField.EditingChanged += async (sender, e) => {
-//				keyStrokeTimer.Stop ();
-//
-//				if (timeElapsedSinceChanged) {
-//					// Probably should do some locking
-//					timeElapsedSinceChanged = false;
-//					keyStrokeTimer.Stop ();
-//
-//					if (!string.IsNullOrEmpty (searchField.Text)) {
-//						if (!searchText.Equals (searchField.Text)) {
-//							searchText = searchField.Text;
-//
-//							var results = await SearchCheeses (searchText);
-//
-//							foreach (var cheeseName in results) {
-			//								Console.WriteLine ($"Cheese name: {cheeseName}");
-//							}
-//						}
-//					}
-//				}
-//
-//				keyStrokeTimer.Start();
-//			};
+			searchField.Text = string.Empty;
+
+			var keyStrokeTimer = new Timer (500);
+			var timeElapsedSinceChanged = true;
+
+			keyStrokeTimer.Start ();
+
+			keyStrokeTimer.Elapsed += (sender, e) => {
+				timeElapsedSinceChanged = true;
+			};
+
+			var searchText = "";
+			searchField.EditingChanged += async (sender, e) => {
+				keyStrokeTimer.Stop ();
+
+				if (timeElapsedSinceChanged) {
+					// Probably should do some locking
+					timeElapsedSinceChanged = false;
+					keyStrokeTimer.Stop ();
+
+					if (!string.IsNullOrEmpty (searchField.Text)) {
+						if (!searchText.Equals (searchField.Text)) {
+							searchText = searchField.Text;
+
+							var results = await SearchCheeses (searchText);
+
+							foreach (var cheeseName in results) {
+											Console.WriteLine ($"Cheese name: {cheeseName}");
+							}
+						}
+					}
+				}
+
+				keyStrokeTimer.Start();
+			};
 
 
-			var editing = searchField.Events ().EditingChanged;
-
-			var searchSteam = editing
-				.Select (_ => searchField.Text)
-				.Where (t => !string.IsNullOrEmpty (t))
-				.DistinctUntilChanged ()
-				.Throttle (TimeSpan.FromSeconds (0.5))
-				.SelectMany (t =>
-					SearchCheeses (t));			                  
-
-			searchSteam.Subscribe (
-				r =>
-				r.ForEach(cheeseName =>
-					Console.WriteLine($"Cheese name: {cheeseName}"))			
-			);
+//			var editing = searchField.Events ().EditingChanged;
+//
+//			var searchSteam = editing
+//				.Select (_ => searchField.Text)
+//				.Where (t => !string.IsNullOrEmpty (t))
+//				.DistinctUntilChanged ()
+//				.Throttle (TimeSpan.FromSeconds (0.5))
+//				.SelectMany (t =>
+//					SearchCheeses (t));			                  
+//
+//			searchSteam.Subscribe (
+//				r =>
+//				r.ForEach(cheeseName =>
+//					Console.WriteLine($"Cheese name: {cheeseName}"))			
+//			);
 		}
 
 		async Task<List<string>> SearchCheeses (string searchText)
@@ -88,12 +90,7 @@ namespace RxLookup
 
 			return allCheeses.Where (c => c.Contains (searchText)).ToList ();
 		}
-
-		public override void DidReceiveMemoryWarning ()
-		{
-			base.DidReceiveMemoryWarning ();
-			// Release any cached data, images, etc that aren't in use.
-		}
+			
 	}
 }
 
