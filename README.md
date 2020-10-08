@@ -10,7 +10,7 @@ Slides and demo code presented with the Cure What Ails You With This Rx - An Int
 The following resources proved useful during the development of this talk:
 * http://www.introtorx.com
 * http://reactivex.io
-* https://channel9.msdn.com/Series/Rx-Workshop
+* https://channel9.msdn.com/Series/Rx-Workshop?WT.mc_id=rxcure-github-masoucou
 * http://reactivex.io/learnrx/
 * https://github.com/Reactive-Extensions/Rx.NET
 * http://rxmarbles.com/
